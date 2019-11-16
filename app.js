@@ -178,6 +178,9 @@ function nodeListforEach(list,callback){
       months=['January', 'Feburary','March','April','May','June','July','August','September','October','November','December']
       document.querySelector(DOMStrings.dateLabel).textContent = months[month] + ", " + year;
     },
+    setFocus: function(){
+      document.querySelector(DOMStrings.inputDesc).focus();
+    },
     addListItem: function(obj, type) {
       var html, newHtml, element;
       
@@ -249,7 +252,6 @@ function nodeListforEach(list,callback){
       nodeListforEach(fields, function(current){
         current.classList.toggle('red-focus');
       });
-
       document.querySelector(DOMStrings.inputBtn).classList.toggle('red');
 
     },
@@ -276,6 +278,7 @@ var appController = (function(budgetCtrl, UICtrl) {
       .querySelector(DOM.container)
       .addEventListener("click", ctrlDeleteItem);
       document.querySelector(DOM.inputType).addEventListener('change',UICtrl.changeType);
+      document.querySelector(DOM.inputType).addEventListener('change',UICtrl.setFocus);
   };
 
   function updateBudget() {
@@ -363,6 +366,7 @@ var appController = (function(budgetCtrl, UICtrl) {
         percentage: -1
       });
       UICtrl.getDate();
+      UICtrl.setFocus();
       return setupEventListeners();
     }
   };

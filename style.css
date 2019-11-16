@@ -44,7 +44,7 @@ body {
     z-index: 1000;
     animation: entrance 0.5s 
     cubic-bezier(0.5, 0, 0.65, 1) forwards;
-    animation-delay: 3s;
+    animation-delay: 1.85s;
     pointer-events: none;
 }
 .overlay h2{
@@ -261,6 +261,20 @@ h2 {
 .item {
     padding: 13px;
     border-bottom: 1px solid;
+    animation: appear 0.35s cubic-bezier(0.5, 0, 0.65, 1) forwards;
+}
+@keyframes appear {
+    0%{
+        opacity: 0; 
+    transform: translateX(-50px);   }
+    50%{
+        opacity: 1;
+        transform: translateX(20px); 
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+     }
 }
 .income__list .item, .income__list .item:first-child{
     border-color: rgb(82, 173, 127);
