@@ -51,12 +51,15 @@ body {
     animation: fade 1s ease-in forwards;
     animation-delay: 0s;
     opacity: 0;
+    text-transform: none;
+    font-weight: 500;
 }
 .overlay h1{
     font-size: 3rem;
     font-weight: 700;
     animation: fade 1s ease-in forwards;
     opacity: 0;
+    color: rgb(255, 175, 25);
 }
 .overlay p{
     animation: fade 1s ease-in forwards;
@@ -184,6 +187,7 @@ body {
     margin-right: 10px;
     font-weight: 300;
     transition: border 0.3s;
+    font-weight: 600;
 }
 
 .add__description,
@@ -197,6 +201,7 @@ body {
     margin-right: 10px;
     border-radius: 5px;
     transition: border 0.3s;
+    font-weight: 600;
 }
 
 .add__description { width: 400px;}
