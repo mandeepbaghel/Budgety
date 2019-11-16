@@ -188,11 +188,11 @@ function nodeListforEach(list,callback){
       if (type === "inc") {
         element = DOMStrings.incomeList;
         html =
-          '<div class="item clearfix" id="inc-%id%"> <div class="item__description">%desc%</div> <div class="right clearfix">  <div class="item__value"> %value%</div> <div class="item__delete">  <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button> </div> </div></div>';
+          '<div class="item clearfix" id="inc-%id%"> <div class="item__description">%desc%</div> <div class="right clearfix">  <div class="item__value"> %value%</div> <div class="item__delete">  <button class="item__delete--btn"><i class="fa fa-times-circle"></i></button> </div> </div></div>';
       } else {
         element = DOMStrings.expensesList;
         html =
-          '<div class="item clearfix" id="exp-%id%"> <div class="item__description">%desc%</div> <div class="right clearfix"> <div class="item__value"> %value%</div> <div class="item__percentage">10%</div> <div class="item__delete"> <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>  </div>  </div> </div>';
+          '<div class="item clearfix" id="exp-%id%"> <div class="item__description">%desc%</div> <div class="right clearfix"> <div class="item__value"> %value%</div> <div class="item__percentage">10%</div> <div class="item__delete"> <button class="item__delete--btn"><i class="fa fa-times-circle"></i></button>  </div>  </div> </div>';
       }
 
       //replace the placeholder text with actual data
