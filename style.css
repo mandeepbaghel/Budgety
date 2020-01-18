@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .clearfix::after {
@@ -14,6 +15,9 @@
     clear: both;
 }
 
+html{
+    font-size: 15px;
+}
 body {
     color: #c0c0c0;
     font-family: 'Montserrat', sans-serif;
@@ -25,8 +29,8 @@ body {
 
 }
 
-.right { float: right; }
-.red { color: rgb(229, 91, 73) !important; }
+.right { float: right;font-size: 1rem; }
+.red { color: rgb(229, 91, 73) !important;border-color: rgb(229, 91, 73) !important; }
 .red-focus:focus { border: 1px solid rgb(229, 91, 73) !important; }
 
 /**********************************************
@@ -82,7 +86,7 @@ body {
     }
 }
 .top {
-    height: 40vh;
+    min-height: 40vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.jpg);
     background-size: cover;
     background-position: center;
@@ -91,7 +95,8 @@ body {
 
 .budget {
     position: absolute;
-    width: 350px;
+    width:75%;
+    max-width: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -99,15 +104,15 @@ body {
 }
 
 .budget__title {
-    font-size: 18px;
+    font-size: 1.3rem;
     text-align: center;
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .budget__value {
     font-weight: 700;
-    font-size: 46px;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 25px;
     letter-spacing: 0.5px;
@@ -115,12 +120,12 @@ body {
 
 .budget__income,
 .budget__expenses {
-    padding: 12px;
+    padding: 0.8rem;
     text-transform: uppercase;
 }
 
 .budget__income {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     font-weight: bold;
     background-color: rgb(10, 131, 64);
 }
@@ -133,7 +138,7 @@ body {
 .budget__income--text,
 .budget__expenses--text {
     float: left;
-    font-size: 13px;
+    font-size: 1rem;
     color: #fff;
     margin-top: 2px;
 }
@@ -147,8 +152,7 @@ body {
 .budget__income--percentage,
 .budget__expenses--percentage {
     float: left;
-    width: 34px;
-    font-size: 11px;
+    font-size: 1rem;
     padding: 3px 0;
     margin-left: 10px;
 }
@@ -157,6 +161,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
     border-radius: 3px;
+    padding: 0.2rem;
 }
 
 
@@ -166,7 +171,7 @@ body {
 
 /***** FORM *****/
 .add {
-    padding: 14px;
+    padding: 0.8rem;
     border-bottom: 1px solid #1c1c1c;
     background-color: #323232;
 
@@ -178,11 +183,11 @@ body {
 }
 
 .add__type {
-    width: 55px;
     border: 1px solid #1b1b1b;
     background-color: #1f1f1f;
-    height: 44px;
-    font-size: 18px;
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    font-size: 1rem;
     color: inherit;
     margin-right: 10px;
     font-weight: 300;
@@ -196,21 +201,26 @@ body {
     background-color: #1f1f1f;
     color: inherit;
     font-family: inherit;
-    font-size: 14px;
-    padding: 12px 15px;
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin: 0.4rem 0; 
     margin-right: 10px;
     border-radius: 5px;
     transition: border 0.3s;
     font-weight: 600;
+    
 }
 
-.add__description { width: 400px;}
+.add__description { width: 75%;max-width: 400px;}
 .add__value { width: 100px;}
 
 .add__btn {
-    font-size: 35px;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    font-weight: 400;
     background: none;
-    border: none;
+    border-radius: 50%;
+    border: 1.5px solid rgb(82,173,127);
     color: rgb(82, 173, 127);
     cursor: pointer;
     display: inline-block;
@@ -233,8 +243,12 @@ body {
 
 /***** LISTS *****/
 .container {
-    width: 1000px;
+    max-width: 1000px;
     margin: 60px auto;
+    padding: 0 3vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
 }
 .no-income-container{
     display: flex;
@@ -243,21 +257,17 @@ body {
     flex-direction: column;
     min-height: 30vh;
 }
-.income {
-    float: left;
-    width: 475px;
-    margin-right: 50px;
+.income, .expenses {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
 }
 
-.expenses {
-    float: left;
-    width: 475px;
-}
 
 h2 {
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -265,7 +275,7 @@ h2 {
 .expenses__title { color: rgb(229, 91, 73); }
 
 .item {
-    padding: 13px;
+    padding: 1rem 0.6rem;
     border-bottom: 1px solid;
     animation: appear 0.35s cubic-bezier(0.5, 0, 0.65, 1) forwards;
 }
@@ -290,14 +300,15 @@ h2 {
 }
 
 .item:first-child { border-top: 1px solid; }
-.item:nth-child(even) { background-color: #202020; }
 
 .item__description {
     float: left;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .item__value {
+    font-size: 1rem;
     float: left;
     transition: transform 0.3s;
 }
@@ -306,9 +317,9 @@ h2 {
     float: left;
     margin-left: 20px;
     transition: transform 0.3s;
-    font-size: 11px;
+    font-size: 0.9rem;
     background-color: #FFDAD9;
-    padding: 3px;
+    padding: 0.2rem;
     border-radius: 3px;
     width: 42px;
     text-align: center;
@@ -361,3 +372,41 @@ h2 {
 .unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
 
+.value__add{
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
+}
+
+@media all and (max-width: 480px){
+    html{
+        font-size: 14px;
+    }
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .income{
+        margin-top: -1rem;
+    }
+    .add__description{
+        width: 100%;
+    }
+    .add__container{
+        display: flex;
+    }
+    .add__value{
+        width: 65%;
+    }
+    .add__btn{
+        margin-left: 0px;
+    }
+}
+
+@media all and (max-width: 380px){
+    html{
+        font-size: 12px;
+    }
+    .top{
+        min-height: 45vh;
+    }
+}

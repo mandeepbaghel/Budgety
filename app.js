@@ -259,6 +259,9 @@ var UIController = (function() {
     setFocus: function() {
       document.querySelector(DOMStrings.inputDesc).focus();
     },
+    ctrlFocusOnValue: function (){
+      document.querySelector(DOMStrings.inputValue).focus();
+    },
     addListItem: function(obj, type) {
       var html, newHtml, element;
 
@@ -359,8 +362,12 @@ var appController = (function(budgetCtrl, UICtrl) {
     var DOM = UICtrl.getDOMStrings();
 
     document.querySelector(DOM.inputBtn).addEventListener("click", ctrlAddItem);
-
-    document.addEventListener("keypress", function(event) {
+    document.querySelector(DOM.inputDesc).addEventListener("keypress", function(event){
+      if(event.keyCode == 13 || event.which == 13){
+        UICtrl.ctrlFocusOnValue();
+      }
+    });
+    document.querySelector(DOM.inputValue).addEventListener("keypress", function(event) {
       if (event.keyCode == 13 || event.which == 13) {
         ctrlAddItem();
       }
